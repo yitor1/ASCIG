@@ -3,12 +3,16 @@ import random
 import requests
 import json
 
+# Get Pastebin url
 url = "https://pastebin.com/raw/BhV66L56"
 
 try:
+# Request page contents
     idea_list_request = requests.get(url)
+# Decode into json
     idea_list = idea_list_request.json()
 except:
+    # Print this if an error occurs
     print("An error has occurred")
 
 print("Character age : " + idea_list["character_age"][random.randint(0, len(idea_list["character_age"]) - 1)])
